@@ -99,7 +99,10 @@ public class StudentRepository {
 
            for(String student : studentList)
            {
-              studentTeacherPairHashMap.remove(student);
+               if(studentHashMap.containsKey(student))
+               {
+                   studentHashMap.remove(student);
+               }
            }
            studentTeacherPairHashMap.remove(teacher);
        }
@@ -118,7 +121,10 @@ public class StudentRepository {
 
             for(String student : studentList)
             {
-               studentTeacherPairHashMap.remove(student);
+                if(studentHashMap.containsKey(student))
+                {
+                    studentHashMap.remove(student);
+                }
             }
 
             if(studentTeacherPairHashMap.containsKey(teacher))
