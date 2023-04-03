@@ -85,7 +85,7 @@ public class StudentRepository {
         List<String> studentList = new ArrayList<>();
 
         for (Map.Entry<String,Student> studentEntry : studentHashMap.entrySet()){
-            Student student = (studentEntry.getValue());
+            Student student = studentEntry.getValue();
             studentList.add(student.getName());
         }
         return studentList;
@@ -99,10 +99,7 @@ public class StudentRepository {
 
            for(String student : studentList)
            {
-               if(studentHashMap.containsKey(student))
-               {
-                   studentHashMap.remove(student);
-               }
+              studentTeacherPairHashMap.remove(student);
            }
            studentTeacherPairHashMap.remove(teacher);
        }
@@ -121,10 +118,7 @@ public class StudentRepository {
 
             for(String student : studentList)
             {
-                if(studentHashMap.containsKey(student))
-                {
-                    studentHashMap.remove(student);
-                }
+               studentTeacherPairHashMap.remove(student);
             }
 
             if(studentTeacherPairHashMap.containsKey(teacher))
